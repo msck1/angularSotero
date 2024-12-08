@@ -21,7 +21,7 @@ import { AuthService } from '../../services/auth.service';
       <button type="submit">Register</button>
     </form>
   `,
-  styles: [],
+  styles: ['./register.component.css'],
 })
 export class RegisterComponent {
   registerForm: FormGroup;

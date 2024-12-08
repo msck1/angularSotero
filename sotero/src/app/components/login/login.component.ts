@@ -13,12 +13,12 @@ import { Router } from '@angular/router';
       <input id="email" formControlName="email" type="email" />
 
       <label for="password">Password:</label>
-      <input id="password" formControlName="password" type="password" />
+      <input id="senha" formControlName="senha" type="password" />
 
       <button type="submit">Login</button>
     </form>
   `,
-  styles: [],
+  styles: ['./login.component.css'],
 })
 export class LoginComponent {
   loginForm: FormGroup;
@@ -26,7 +26,7 @@ export class LoginComponent {
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      senha: ['', Validators.required],
     });
   }
 
@@ -34,7 +34,7 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe(response => {
         console.log('User logged in:', response)
-        this.router.navigate([]) // rota do home aqui
+        this.router.navigate(['/home']) // rota do home aqui
       });
     }
   }

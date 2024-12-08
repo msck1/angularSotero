@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app/app.component';
 import { LoginComponent } from './app/components/login/login.component';
 import { RegisterComponent } from './app/components/register/register.component';
+import { HomeComponent } from './app/components/home/home.component';
 import { provideHttpClient } from '@angular/common/http';
 
 bootstrapApplication(AppComponent, {
@@ -13,6 +14,7 @@ bootstrapApplication(AppComponent, {
     provideRouter([
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
+      { path: 'home', component: HomeComponent},
       { path: '', redirectTo: 'register', pathMatch: 'full' },
     ]),
     provideHttpClient(),
